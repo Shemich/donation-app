@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Donate</title>
+</head>
+<body>
+<div th:switch="${donates}">
+  <h2 th:case="null">Донатов не найдено!</h2>
+  <div th:case="*">
+    <h2>Таблица донатов</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Стример</th>
+        <th>Донатер</th>
+        <th>Сообщение</th>
+        <th>Сумма</th>
+        <th>Анонимно</th>
+        <th>Дата создания</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="donate : ${apps}">
+        <td th:text="${donate.id}"></td>
+        <td th:text="${donate.streamerNickname}"></td>
+        <td th:text="${donate.donaterNickname}"></td>
+        <td th:text="${donate.message}"></td>
+        <td th:text="${donate.amount}"></td>
+        <td th:text="${donate.isPrivate}"></td>
+        <td th:text="${donate.dateOfCreation}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

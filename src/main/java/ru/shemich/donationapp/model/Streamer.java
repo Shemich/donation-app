@@ -21,7 +21,7 @@ public class Streamer {
     @Column(name = "id", length = 6, nullable = false)
     Long id;
     @Column(name = "nickname")
-    String text;
+    String nickname;
     @Column(name = "widget_id")
     Long widgetId;
 }

@@ -35,4 +35,6 @@ public class Donate {
     Date dateOfExpiration;
     @Column(name = "donater_nickname")
     String donaterNickname;
+    @Column(name = "streamer_nickname")
+    String streamerNickname;
 }

@@ -1,5 +1,7 @@
 package ru.shemich.donationapp.service;
 
+import org.springframework.stereotype.Service;
+import ru.shemich.donationapp.api.request.DonateRequest;
 import ru.shemich.donationapp.model.Donate;
 
 import java.util.List;
@@ -11,5 +13,6 @@ public interface DonateService {
     void save(Donate donate);
     Donate update(Donate donate, Donate donateDetails);
     void delete(Long id);
+    Donate create(DonateRequest request, String streamerNickname);
 
 }

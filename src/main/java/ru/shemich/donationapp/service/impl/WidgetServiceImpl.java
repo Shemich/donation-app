@@ -2,6 +2,7 @@ package ru.shemich.donationapp.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.shemich.donationapp.api.request.DonateRequest;
 import ru.shemich.donationapp.model.Widget;
 import ru.shemich.donationapp.repository.WidgetRepository;
 import ru.shemich.donationapp.service.WidgetService;
@@ -27,9 +28,10 @@ public class WidgetServiceImpl implements WidgetService {
     }
 
     @Override
-    public Widget update(Widget widget, Widget widgetDetails) {
-/*        if (personDetails.getName() != null) person.setName(personDetails.getName());*/
-        return widget;
+    public void update(Widget widget, DonateRequest request) {
+        widget.setDonateAuthor(request.getDonaterNickname());  //  TODO: проверка на анонимность
+        widget.setDonateMessage(request.getMessage());
+        widgetRepository.save(widget);
     }
 
     @Override
