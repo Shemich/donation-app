@@ -31,6 +31,7 @@ public class WidgetServiceImpl implements WidgetService {
     public void update(Widget widget, DonateRequest request) {
         widget.setDonateAuthor(request.getDonaterNickname());  //  TODO: проверка на анонимность
         widget.setDonateMessage(request.getMessage());
+        widget.setAmount(request.getAmount());
         widgetRepository.save(widget);
     }
 

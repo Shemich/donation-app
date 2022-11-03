@@ -24,4 +24,6 @@ public class Widget {
     String donateMessage;
     @Column(name = "donate_author")
     String donateAuthor;
+    @Column(name = "amount")
+    Long amount;
 }
