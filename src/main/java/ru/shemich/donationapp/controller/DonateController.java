@@ -64,21 +64,4 @@ public class DonateController {
         httpHeaders.add("Location","api/v1/donate/" + donate.getId());
         return new ResponseEntity<>(httpHeaders, HttpStatus.CREATED);
     }
-
-    // admin only role
-    @DeleteMapping("/{donateId}")
-    public ResponseEntity<String> deleteDonate (@PathVariable Long donateId) {
-        donateService.delete(donateId);
-        log.info("Delete donate with id: {}", donateId);
-        return new ResponseEntity<>("Donate with id: " + donateId + " deleted", HttpStatus.NO_CONTENT);
-    }
-
-    @PatchMapping("/{donateId}")
-    public ResponseEntity<Donate> updateDonate (@PathVariable Long donateId, @RequestBody Donate donateDetails) {
-        Donate donate = donateService.getById(donateId);
-        donate = donateService.update(donate, donateDetails);
-        donateService.save(donate);
-        log.info("Updating person with id: {}", donateId);
-        return new ResponseEntity<>(donate, HttpStatus.OK);
-    }
 }
