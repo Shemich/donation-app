@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donation</title>
+    <title>Login</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -12,23 +12,20 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="mb-3">Make donate</h1>
+    <h1 class="mb-3">Login</h1>
     <div class="row mb3">
         <div class="col-auto">
-            <input type="text" class="form-control" placeholder="amount">
-        </div>
-        <div class="col-auto">
-            <input type="text" class="form-control" placeholder="message">
-        </div>
-        <div class="col-auto">
-            <button id="sendDonate" class="btn btn-primary">Отправить донат</button>
-        </div>
+            <input id="login" type="text" class="form-control" placeholder="login">
+            <p></p>
+            <input id="password" type="text" class="form-control" placeholder="password">
+            <p></p>
+            <button id="sendLogin" class="btn btn-primary">Войти</button>
     </div>
     <div id="donations">
 
     </div>
 </div>
 
-<script src="app.js"></script>
+<script src="login-js.js"></script>
 </body>
 </html>

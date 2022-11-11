@@ -7,9 +7,7 @@ import static lombok.AccessLevel.PRIVATE;
 
 @Data
 @FieldDefaults(level = PRIVATE)
-public class DonateRequest {
-    Long amount;
-    String message;
-    String donaterNickname;
-    Boolean isPrivate;
+public class AuthenticationRequest {
+    String login;
+    String password;
 }

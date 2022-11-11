@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Create donate</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make donation</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
 </head>
 <body>
-<form action="#" th:action="@{/donate-create}" th:object="${donate}" method="post">
-    <label for="amount">Сумма доната</label>
-    <input type="text" th:field="*{amount}" id="amount" placeholder="Сумма доната">
-    <label for="message">Сообщение к донату</label>
-    <input type="text" th:field="*{message}" id="message" placeholder="Сообщение">
-    <input type="submit" value="Отправить донат">
-</form>
+<div class="container">
+  <h1 class="mb-3">Make donate</h1>
+  <div class="row mb3">
+    <div class="col-auto">
+      <input id="donateAmount" type="text" class="form-control" placeholder="amount">
+    </div>
+    <div class="col-auto">
+      <input id="donateMessage" type="text" class="form-control" placeholder="message">
+    </div>
+    <div class="col-auto">
+      <input id="donateDonaterNickname" type="text" class="form-control" placeholder="your nickname">
+    </div>
+    <div class="col-auto">
+      <button id="sendDonate" class="btn btn-primary">Отправить донат</button>
+    </div>
+  </div>
+  <div id="donations">
+
+  </div>
+</div>
+
+<script src="donateJS.js"></script>
 </body>
 </html>

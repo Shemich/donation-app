@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {font-family: Arial, Helvetica, sans-serif;}
-
-    .container {
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Screen</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h3>Widget</h3>
-
 <div class="container">
-  <div th:switch="${widget}">
-    <h2 th:case="null">Widget not found!</h2>
-    <div th:case="*">
-      <h3>Donation text</h3>
-      <p><span th:text="${widget.text}"> </span></p>
+    <script>
+        setTimeout(function(){
+            document.getElementById('widget').style.display = 'none';
+        }, 10000);
+        setTimeout(() => {
+            document.location.reload();
+        }, 15000);
+    </script>
+    <div id="widget">
+        <script src="widget-script.js">
+
+        </script>
     </div>
-  </div>
 </div>
+
 </body>
 </html>

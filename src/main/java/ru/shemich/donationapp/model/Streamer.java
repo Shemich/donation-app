@@ -1,18 +1,23 @@
 package ru.shemich.donationapp.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.Hibernate;
+
 import javax.persistence.*;
+import java.util.Objects;
 
 import static javax.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.PRIVATE;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = PRIVATE)
 @Table(name = "streamers")
 public class Streamer {
@@ -24,4 +29,17 @@ public class Streamer {
     String nickname;
     @Column(name = "widget_id")
     Long widgetId;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Streamer streamer = (Streamer) o;
+        return id != null && Objects.equals(id, streamer.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

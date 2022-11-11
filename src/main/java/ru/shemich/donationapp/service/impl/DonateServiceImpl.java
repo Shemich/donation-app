@@ -47,7 +47,7 @@ public class DonateServiceImpl implements DonateService {
     public Donate create(DonateRequest request, String streamerNickname) {
         Donate donate = new Donate();
         donate.setStreamerNickname(streamerNickname);
-        donate.setText(request.getMessage());
+        donate.setMessage(request.getMessage());
         donate.setAmount(request.getAmount());
         donate.setIsPrivate(request.getIsPrivate());
         if (!donate.getIsPrivate()) donate.setDonaterNickname(request.getDonaterNickname());

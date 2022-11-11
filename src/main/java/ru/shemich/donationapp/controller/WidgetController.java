@@ -11,6 +11,7 @@ import ru.shemich.donationapp.service.impl.WidgetServiceImpl;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+@CrossOrigin(maxAge = 3600)
 @Slf4j
 @RestController
 @RequestMapping(path = "/api/v1/widget/", produces = APPLICATION_JSON_VALUE)
@@ -24,14 +25,20 @@ public class WidgetController {
     }
 
     @GetMapping("/{widgetId}")
-    public ResponseEntity<Widget> getWidget(@PathVariable("widgetId") Long id) {
+    public ResponseEntity<Widget> getWidget(@RequestParam("token") String hash, @PathVariable("widgetId") Long id) {
         Widget widget = widgetServiceImpl.getById(id);
         if (widget == null) {
             log.warn("Not found widget with id: {}", id);
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         } else {
             log.info("Found widget with id: {}", id);
-            return new ResponseEntity<>(widget, HttpStatus.OK);
+            if (widget.getHash().equals(hash)) {
+                log.info("Token match ok: {}", hash);
+                return new ResponseEntity<>(widget, HttpStatus.OK);
+            } else {
+                log.info("Token match bad: {}", hash);
+                return new ResponseEntity<>(null, HttpStatus.FORBIDDEN);
+            }
         }
     }
 

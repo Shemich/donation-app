@@ -1,6 +1,5 @@
 package ru.shemich.donationapp.service;
 
-import org.springframework.stereotype.Service;
 import ru.shemich.donationapp.api.request.DonateRequest;
 import ru.shemich.donationapp.model.Donate;
 

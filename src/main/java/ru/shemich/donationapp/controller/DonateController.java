@@ -2,10 +2,8 @@ package ru.shemich.donationapp.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.shemich.donationapp.api.request.DonateRequest;
 import ru.shemich.donationapp.model.Donate;
@@ -14,12 +12,12 @@ import ru.shemich.donationapp.model.Widget;
 import ru.shemich.donationapp.service.DonateService;
 import ru.shemich.donationapp.service.StreamerService;
 import ru.shemich.donationapp.service.WidgetService;
-import ru.shemich.donationapp.service.impl.DonateServiceImpl;
 
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+@CrossOrigin(maxAge = 3600)
 @Slf4j
 @RequiredArgsConstructor
 @RestController
@@ -52,7 +50,7 @@ public class DonateController {
     }
 
     @PostMapping(path = "/{streamerNickname}", consumes = "application/json")
-    public ResponseEntity<String> createDonate(@PathVariable("streamerNickname") String streamerNickname,
+    public ResponseEntity<Donate> createDonate(@PathVariable("streamerNickname") String streamerNickname,
                                                @RequestBody DonateRequest request) {
         Donate donate = donateService.create(request, streamerNickname);  //  создаем донат и сохраняем в бд
         log.info("Create donate with id: {}", donate.getId());
@@ -60,8 +58,8 @@ public class DonateController {
         Widget widget = widgetService.getById(streamer.getWidgetId());
         widgetService.update(widget, request);
         log.info("Updated widget with id: {}", widget.getId());
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Location","api/v1/donate/" + donate.getId());
-        return new ResponseEntity<>(httpHeaders, HttpStatus.CREATED);
+//        HttpHeaders httpHeaders = new HttpHeaders();
+//        httpHeaders.add("Location","api/v1/donate/" + donate.getId());
+        return new ResponseEntity<>(donate, HttpStatus.CREATED);
     }
 }
