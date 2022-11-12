@@ -29,6 +29,8 @@ public class Streamer {
     String nickname;
     @Column(name = "widget_id")
     Long widgetId;
+    @Column(name = "balance")
+    Long balance;
 
     @Override
     public boolean equals(Object o) {

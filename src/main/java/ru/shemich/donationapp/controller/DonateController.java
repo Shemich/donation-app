@@ -54,12 +54,14 @@ public class DonateController {
                                                @RequestBody DonateRequest request) {
         Donate donate = donateService.create(request, streamerNickname);  //  создаем донат и сохраняем в бд
         log.info("Create donate with id: {}", donate.getId());
-        Streamer streamer = streamerService.getByNickname(streamerNickname);  //  обновить виджет
+        Streamer streamer = streamerService.getByNickname(streamerNickname);
+        log.info("Streamer: {}", streamer);
         Widget widget = widgetService.getById(streamer.getWidgetId());
-        widgetService.update(widget, request);
+        log.info("Widget: {}", widget);
+        widgetService.update(widget, request);  //  обновить виджет
+        streamer.setBalance(streamer.getBalance() + request.getAmount());
+        streamerService.saveStreamer(streamer);
         log.info("Updated widget with id: {}", widget.getId());
-//        HttpHeaders httpHeaders = new HttpHeaders();
-//        httpHeaders.add("Location","api/v1/donate/" + donate.getId());
         return new ResponseEntity<>(donate, HttpStatus.CREATED);
     }
 }
