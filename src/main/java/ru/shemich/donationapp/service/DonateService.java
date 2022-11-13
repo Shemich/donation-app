@@ -9,6 +9,7 @@ public interface DonateService {
 
     List<Donate> getAll();
     Donate getById(Long id);
+    Donate getLast(Long widgetId);
     void save(Donate donate);
     Donate update(Donate donate, Donate donateDetails);
     void delete(Long id);

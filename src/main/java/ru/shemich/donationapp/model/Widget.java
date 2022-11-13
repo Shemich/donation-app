@@ -35,6 +35,10 @@ public class Widget {
     String hash;
     @Column(name = "streamer_id")
     Long streamerId;
+    @Column(name = "donate_id")
+    Long donateId;
+    @Column(name = "tip_id")
+    String tipId;
 
     @Override
     public boolean equals(Object o) {

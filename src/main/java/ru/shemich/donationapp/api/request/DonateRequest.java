@@ -12,4 +12,5 @@ public class DonateRequest {
     String message;
     String donaterNickname;
     Boolean isPrivate;
+    String country;
 }

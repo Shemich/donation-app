@@ -8,23 +8,31 @@
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="styleDonate.css">
 
 </head>
 <body>
 <div class="container">
-  <h1 class="mb-3">Make donate</h1>
+  <span class="text1">AlexZilla</span>
+  <span class="text2">Страница доната</span>
   <div class="row mb3">
     <div class="col-auto">
-      <input id="donateAmount" type="text" class="form-control" placeholder="amount">
+      <img src="streamer-girl.jpg" alt="streamer" width="40%">
     </div>
-    <div class="col-auto">
-      <input id="donateMessage" type="text" class="form-control" placeholder="message">
+
+    <div class="row mt-3">
+    <select id="country" type="text" class="form-control">
+      <option>Россия</option>
+      <option>Украина</option>
+      <option>Казахстан</option>
+      <option>Белорусь</option>
+    </select>
     </div>
-    <div class="col-auto">
-      <input id="donateDonaterNickname" type="text" class="form-control" placeholder="your nickname">
+    <div class="row mt-3">
+    <input id="donateDonaterNickname" type="text" class="form-control" placeholder="Ваш никнейм">
     </div>
-    <div class="col-auto">
-      <button id="sendDonate" class="btn btn-primary">Отправить донат</button>
+    <div class="row mt-3">
+    <a href="https://netmonet.co/tip/236463"><button id="sendDonate" class="btn btn-primary">Отправить донат</button></a>
     </div>
   </div>
   <div id="donations">

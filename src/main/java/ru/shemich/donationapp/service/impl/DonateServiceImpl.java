@@ -3,16 +3,20 @@ package ru.shemich.donationapp.service.impl;
 import org.springframework.stereotype.Service;
 import ru.shemich.donationapp.api.request.DonateRequest;
 import ru.shemich.donationapp.model.Donate;
+import ru.shemich.donationapp.model.Widget;
 import ru.shemich.donationapp.repository.DonateRepository;
 import ru.shemich.donationapp.service.DonateService;
+import ru.shemich.donationapp.service.WidgetService;
 
 import java.util.List;
 
 @Service
 public class DonateServiceImpl implements DonateService {
+    private final WidgetService widgetService;
     private final DonateRepository donateRepository;
 
-    public DonateServiceImpl(DonateRepository donateRepository) {
+    public DonateServiceImpl(WidgetService widgetService, DonateRepository donateRepository) {
+        this.widgetService = widgetService;
         this.donateRepository = donateRepository;
     }
 
@@ -23,6 +27,12 @@ public class DonateServiceImpl implements DonateService {
     @Override
     public Donate getById(Long id) {
         return donateRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Donate getLast(Long widgetId) {
+        Widget widget = widgetService.getById(widgetId);
+        return getById(widget.getDonateId());
     }
 
     @Override

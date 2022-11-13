@@ -35,11 +35,13 @@ public class Donate {
     Long amount;
     @Column(name = "date_of_creation")
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    Date dateOfExpiration;
+    Date dateOfCreation;
     @Column(name = "donater_nickname")
     String donaterNickname;
     @Column(name = "streamer_nickname")
     String streamerNickname;
+    @Column(name = "country")
+    String country;
 
     @Override
     public boolean equals(Object o) {
