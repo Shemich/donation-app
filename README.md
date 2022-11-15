@@ -20,6 +20,8 @@
 
 ### Конечный результат
 
+Презентация [тык](https://drive.google.com/file/d/14FvjPbobu-toBWJNW2I9D_4VtuXqGAOB/view?usp=share_link)
+
 Демонстрация на [видео](https://youtu.be/piQImHjaeEk)
 
 <details>
