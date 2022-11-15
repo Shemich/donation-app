@@ -18,6 +18,12 @@
 
 Фронтенд: ```donation-app/src/main/resources/templates```
 
+### Технологический стек
+
+Бекенд: Java, Spring Boot, PostgreSQL
+
+Фронтенд: JavaScript
+
 ### Конечный результат
 
 Презентация [тык](https://drive.google.com/file/d/14FvjPbobu-toBWJNW2I9D_4VtuXqGAOB/view?usp=share_link)
