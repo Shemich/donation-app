@@ -1,6 +1,6 @@
 # Трек Web: Веб-приложение для сбора донатов от Альфа-Банка
 
-Команда Скрепыши
+Команда Скрепыши. 11-13 Ноября 2022 года
 
 Функциональность:
 - Возможность просмотра сообщений, донатов и сохранения их логов
@@ -18,7 +18,12 @@
 
 Фронтенд: ```donation-app/src/main/resources/templates```
 
+### Конечный результат
+
 Демонстрация на [видео](https://youtu.be/piQImHjaeEk)
+
+<details>
+<summary>Скриншоты из Фигмы</summary>
 
 ## Figma
 ![Иллюстрация Figma 1](https://sun9-78.userapi.com/impg/7KZ8kYFUi2NhYibb5ljNWJq8Iphc0H5Bg_WMOw/zrn4LhiWPBA.jpg?size=1297x729&quality=95&sign=3cbf3514256b56b65442a7f4b94fd0c3&type=album)
@@ -28,7 +33,13 @@
 ![Иллюстрация Figma 3](https://sun9-85.userapi.com/impg/-4jAHZUuXopCAQmr1TlThKbRl4LWAcwQ_Cenxg/ttCR2rChNis.jpg?size=1296x732&quality=95&sign=372c1b5af10f592296658e595395a301&type=album)
 
 ![Иллюстрация Figma 4](https://sun9-50.userapi.com/impg/FBnXmqqCUUaLZJHMDkuV-HKRm3sg1asAE71cqQ/RIbBV2WrCXI.jpg?size=1299x737&quality=95&sign=838657e69158fd402f0d5ec6a77aafef&type=album)
+  
+ </details>
 
+
+<details>
+<summary>Скриншоты созданного прототипа</summary>
+  
 ## Демонстрация созданного прототипа
 ![Иллюстрация MVP 1](https://sun9-81.userapi.com/impg/QDBGT1aw2uk_GKzQ_uNzHXGbav5i0xkL1kTR2Q/vEoadBEj3lI.jpg?size=1130x802&quality=95&sign=c9a00b51b58f8654792d4ceebf085af8&type=album)
 
@@ -39,3 +50,6 @@
 ![Иллюстрация MVP 4](https://sun9-81.userapi.com/impg/kghV0pkzgnZoZquNFuAaWHHcFc2g6lmuMx9qfA/Z0ju3psSn9I.jpg?size=1431x721&quality=95&sign=ec44b5c9dc3a1569b2646ba406de44d1&type=album)
 
 ![Иллюстрация MVP 5](https://sun9-28.userapi.com/impg/HwLVx7RKFnLqBHkJgJhtIbpp6iw16SGxoa4KYw/49e92FKzaxk.jpg?size=1900x968&quality=96&sign=e379f0279195a4615671940fb26afd87&type=album)
+
+</details>
+
